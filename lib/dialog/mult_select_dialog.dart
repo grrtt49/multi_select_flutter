@@ -170,7 +170,12 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
             widget.onSelectionChanged!(_selectedValues);
           }
         },
-      ) : Text(item.label),
+      ) : Padding(
+        padding: EdgeInsets.only(left: 10),
+        child: Text(item.label, style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ))
+      ),
     );
   }
 
