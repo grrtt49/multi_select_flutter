@@ -139,7 +139,7 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
       data: ThemeData(
         unselectedWidgetColor: widget.unselectedColor ?? Colors.black54,
       ),
-      child: CheckboxListTile(
+      child: item.selectable ? CheckboxListTile(
         checkColor: widget.checkColor,
         value: item.selected,
         activeColor: widget.colorator != null
@@ -170,7 +170,7 @@ class _MultiSelectDialogState<T> extends State<MultiSelectDialog<T>> {
             widget.onSelectionChanged!(_selectedValues);
           }
         },
-      ),
+      ) : Text(item.label),
     );
   }
 
